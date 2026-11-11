@@ -14,22 +14,13 @@
   {{!-- Theme CSS --}}
   <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
 
-  {{#if @custom.cyber_accent_color}}
-  <style>
-    :root {
-      --color-cyan: {{@custom.cyber_accent_color}};
-    }
-  </style>
-  {{/if}}
 
   {{!-- Ghost Head --}}
   {{ghost_head}}
 </head>
-<body class="{{body_class}}{{#unless @custom.enable_scanlines}} scanlines-disabled{{/unless}}">
+<body class="{{body_class}}">
   {{!-- Ambient Cyberpunk Visual Layers --}}
   <div class="cyber-bg-grid" id="cyber-bg-grid" aria-hidden="true"></div>
-  <div class="cyber-scanlines" id="cyber-scanlines" aria-hidden="true"></div>
-  <div class="cyber-crt-vignette" aria-hidden="true"></div>
   <div class="cyber-reading-bar" id="cyber-reading-bar" aria-hidden="true"></div>
 
   {{!-- Skip Navigation link for a11y --}}

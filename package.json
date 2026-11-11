@@ -36,14 +36,6 @@
     "posts_per_page": 9,
     "card_assets": true,
     "custom": {
-      "cyber_accent_color": {
-        "type": "color",
-        "default": "#00f0ff"
-      },
-      "enable_scanlines": {
-        "type": "boolean",
-        "default": false
-      },
       "header_style": {
         "type": "select",
         "options": [
