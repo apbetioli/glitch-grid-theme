@@ -8,9 +8,8 @@
         <div class="page-meta-top">
           <a class="cyber-back-link" href="{{@site.url}}">
             {{> "icons/arrow-left"}}
-            <span>RETURN TO GRID</span>
+            <span>Back</span>
           </a>
-          <span class="page-type-badge">[ STATIC_NODE ]</span>
         </div>
 
         <h1 class="page-title glitch-hover" data-text="{{title}}">
@@ -28,10 +27,6 @@
     {{#if feature_image}}
       <figure class="page-feature-image-wrap cyber-container">
         <div class="feature-image-frame">
-          <span class="hud-corner top-left" aria-hidden="true"></span>
-          <span class="hud-corner top-right" aria-hidden="true"></span>
-          <span class="hud-corner bottom-left" aria-hidden="true"></span>
-          <span class="hud-corner bottom-right" aria-hidden="true"></span>
           <img
             class="page-feature-image"
             srcset="{{img_url feature_image size="s"}} 300w,
@@ -45,7 +40,7 @@
         </div>
         {{#if feature_image_caption}}
           <figcaption class="feature-image-caption">
-            <span class="caption-prefix">// CAPTION:</span> {{{feature_image_caption}}}
+            {{{feature_image_caption}}}
           </figcaption>
         {{/if}}
       </figure>

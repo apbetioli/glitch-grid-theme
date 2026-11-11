@@ -19,11 +19,6 @@
           {{/if}}
 
           <div class="author-profile-bio-wrap">
-            <div class="author-hud-meta">
-              <span class="status-pulse-dot"></span>
-              <span class="author-role-label">OPERATIVE_RECORD // AGENT_FILE</span>
-            </div>
-
             <h1 class="author-profile-name glitch-text" data-text="{{name}}">{{name}}</h1>
 
             {{#if bio}}
@@ -32,22 +27,22 @@
 
             <div class="author-profile-tags">
               {{#if location}}
-                <span class="author-meta-pill">LOC: {{location}}</span>
+                <span class="author-meta-pill">{{location}}</span>
               {{/if}}
               <span class="author-meta-pill">
-                RECORDS: {{plural ../pagination.total empty="0 TRANSMISSIONS" singular="1 TRANSMISSION" plural="% TRANSMISSIONS"}}
+                {{plural ../pagination.total empty="0 posts" singular="1 post" plural="% posts"}}
               </span>
             </div>
 
             <div class="author-profile-links">
               {{#if website}}
-                <a class="cyber-btn cyber-btn-ghost-sm" href="{{website}}" target="_blank" rel="noopener">WEBSITE</a>
+                <a class="cyber-btn cyber-btn-ghost-sm" href="{{website}}" target="_blank" rel="noopener">Website</a>
               {{/if}}
               {{#if twitter}}
-                <a class="cyber-btn cyber-btn-ghost-sm" href="{{social_url type="twitter"}}" target="_blank" rel="noopener">TWITTER</a>
+                <a class="cyber-btn cyber-btn-ghost-sm" href="{{social_url type="twitter"}}" target="_blank" rel="noopener">Twitter</a>
               {{/if}}
               {{#if facebook}}
-                <a class="cyber-btn cyber-btn-ghost-sm" href="{{social_url type="facebook"}}" target="_blank" rel="noopener">FACEBOOK</a>
+                <a class="cyber-btn cyber-btn-ghost-sm" href="{{social_url type="facebook"}}" target="_blank" rel="noopener">Facebook</a>
               {{/if}}
             </div>
           </div>

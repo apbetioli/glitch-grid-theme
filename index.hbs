@@ -2,7 +2,7 @@
 
 <div class="cyber-index-page">
   {{#match @custom.header_style "!=" "Minimal"}}
-  {{!-- Homepage Cyber HUD Hero --}}
+  {{!-- Homepage Hero --}}
   <section class="cyber-hero">
     <div class="cyber-container hero-inner">
       <div class="hero-hud-frame">
@@ -11,34 +11,15 @@
         <span class="hud-corner bottom-left" aria-hidden="true"></span>
         <span class="hud-corner bottom-right" aria-hidden="true"></span>
 
-        <div class="hero-hud-header">
-          <span class="hud-dot"></span>
-          <span class="hud-label">FREQUENCY_BAND // 0x7FF_SYS</span>
-          <span class="hud-code">SEC_LVL: UNRESTRICTED</span>
-        </div>
-
         <h1 class="hero-title glitch-text" data-text="{{@site.title}}">
           {{@site.title}}
         </h1>
 
-        <p class="hero-description">
-          {{@site.description}}
-        </p>
-
-        <div class="hero-meta-strip">
-          <div class="meta-tag-item">
-            <span class="meta-key">TRANSMISSIONS:</span>
-            <span class="meta-val">{{pagination.total}}</span>
-          </div>
-          <div class="meta-tag-item">
-            <span class="meta-key">INTERFACE:</span>
-            <span class="meta-val highlight-cyan">CYBER_GRID</span>
-          </div>
-          <div class="meta-tag-item">
-            <span class="meta-key">DATASTREAM:</span>
-            <span class="meta-val highlight-magenta">LIVE_FEED</span>
-          </div>
-        </div>
+        {{#if @site.description}}
+          <p class="hero-description">
+            {{@site.description}}
+          </p>
+        {{/if}}
       </div>
     </div>
   </section>
@@ -47,14 +28,6 @@
   {{!-- Main Post Feed Section --}}
   <section class="cyber-feed-section">
     <div class="cyber-container">
-      <div class="feed-header-bar">
-        <div class="feed-title-wrap">
-          <span class="feed-pulse"></span>
-          <h2 class="feed-title">// PRIMARY_DATALINK</h2>
-        </div>
-        <span class="feed-filter-indicator">[ ALL_ENTRIES ]</span>
-      </div>
-
       {{#if posts}}
         <div class="cyber-grid">
           {{#foreach posts}}
@@ -66,8 +39,8 @@
       {{else}}
         <div class="cyber-empty-state">
           <div class="empty-icon">{{> "icons/terminal"}}</div>
-          <h3 class="empty-title">NO SIGNALS DETECTED</h3>
-          <p class="empty-desc">The neural frequency is currently silent. Awaiting broadcasts.</p>
+          <h3 class="empty-title">No posts yet</h3>
+          <p class="empty-desc">Check back soon for new content.</p>
         </div>
       {{/if}}
     </div>

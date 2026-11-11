@@ -10,13 +10,8 @@
         <span class="hud-corner bottom-left" aria-hidden="true"></span>
         <span class="hud-corner bottom-right" aria-hidden="true"></span>
 
-        <div class="archive-meta-tag">
-          <span class="archive-dot"></span>
-          <span class="archive-type">FREQUENCY_FILTER // TAG_ARCHIVE</span>
-        </div>
-
-        <h1 class="archive-title glitch-text" data-text="#{{name}}">
-          #{{name}}
+        <h1 class="archive-title glitch-text" data-text="{{name}}">
+          {{name}}
         </h1>
 
         {{#if description}}
@@ -24,8 +19,7 @@
         {{/if}}
 
         <div class="archive-count-badge">
-          <span class="count-prefix">ENTRIES:</span>
-          <span class="count-val">{{plural ../pagination.total empty="0 TRANSMISSIONS" singular="1 TRANSMISSION" plural="% TRANSMISSIONS"}}</span>
+          <span class="count-val">{{plural ../pagination.total empty="0 posts" singular="1 post" plural="% posts"}}</span>
         </div>
       </div>
     </div>

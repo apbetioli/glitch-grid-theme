@@ -1,15 +1,8 @@
 <article class="cyber-card {{post_class}}{{#if featured}} is-featured{{/if}}{{#unless feature_image}} no-image{{/unless}}">
   <div class="cyber-card-frame">
-    {{!-- HUD corner markers --}}
-    <span class="hud-corner top-left" aria-hidden="true"></span>
-    <span class="hud-corner top-right" aria-hidden="true"></span>
-    <span class="hud-corner bottom-left" aria-hidden="true"></span>
-    <span class="hud-corner bottom-right" aria-hidden="true"></span>
-
     {{#if feature_image}}
       <a class="cyber-card-media" href="{{url}}" tabindex="-1" aria-hidden="true">
         <div class="media-overlay"></div>
-        <div class="cyber-scan-bar" aria-hidden="true"></div>
         <img
           class="cyber-card-img"
           srcset="{{img_url feature_image size="s"}} 300w,
@@ -21,9 +14,7 @@
           loading="lazy"
         />
         {{#if featured}}
-          <span class="cyber-badge badge-featured">
-            <span class="badge-dot"></span> PRIORITY_SIGNAL
-          </span>
+          <span class="cyber-badge badge-featured">Featured</span>
         {{/if}}
       </a>
     {{/if}}
@@ -31,9 +22,7 @@
     <div class="cyber-card-body">
       <div class="cyber-card-meta-top">
         {{#primary_tag}}
-          <a class="cyber-tag" href="{{url}}">
-            <span class="tag-hash">#</span>{{name}}
-          </a>
+          <a class="cyber-tag" href="{{url}}">{{name}}</a>
         {{/primary_tag}}
         <span class="cyber-reading-time">{{reading_time}}</span>
       </div>
@@ -62,15 +51,10 @@
           <div class="author-info">
             <span class="author-name">{{authors}}</span>
             <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">
-              {{date format="YYYY.MM.DD"}}
+              {{date format="YYYY-MM-DD"}}
             </time>
           </div>
         </div>
-
-        <a class="cyber-read-more" href="{{url}}" aria-label="Read {{title}}">
-          <span class="read-more-text">ACCESS</span>
-          <span class="read-more-arrow">{{> "icons/arrow-right"}}</span>
-        </a>
       </div>
     </div>
   </div>

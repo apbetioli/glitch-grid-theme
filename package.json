@@ -42,7 +42,7 @@
       },
       "enable_scanlines": {
         "type": "boolean",
-        "default": true
+        "default": false
       },
       "header_style": {
         "type": "select",

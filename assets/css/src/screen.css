@@ -661,7 +661,7 @@ body.scanlines-disabled .cyber-scanlines {
   color: var(--color-text-muted);
   max-width: 720px;
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
 .hero-meta-strip {
@@ -1300,7 +1300,7 @@ body.scanlines-disabled .cyber-scanlines {
 .cyber-code-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 8px 16px;
   background: rgba(16, 18, 29, 0.95);
   border-bottom: 1px solid rgba(0, 240, 255, 0.15);

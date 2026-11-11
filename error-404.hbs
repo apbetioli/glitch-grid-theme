@@ -8,22 +8,17 @@
       <span class="hud-corner bottom-left" aria-hidden="true"></span>
       <span class="hud-corner bottom-right" aria-hidden="true"></span>
 
-      <div class="error-code-badge">
-        <span class="badge-dot-red"></span>
-        <span>ERROR_CODE: 404 // MEMORY_CORRUPTED</span>
-      </div>
-
       <h1 class="error-big-code glitch-text" data-text="404">404</h1>
-      <h2 class="error-title">NODE NOT FOUND IN MATRIX</h2>
+      <h2 class="error-title">Page not found</h2>
 
       <p class="error-desc">
-        The requested neural memory address has been purged, relocated, or severed from the network.
+        The page you are looking for does not exist or has been moved.
       </p>
 
       <div class="error-actions">
         <a class="cyber-btn cyber-btn-primary" href="{{@site.url}}">
           <span class="btn-chamfer"></span>
-          <span class="btn-text">RETURN TO PRIMARY GRID</span>
+          <span class="btn-text">Back to home</span>
         </a>
       </div>
     </div>
@@ -31,7 +26,7 @@
     {{#get "posts" limit="3" as |recent_posts|}}
       {{#if recent_posts}}
         <div class="error-recent-section">
-          <h3 class="recent-title">// AVAILABLE_FREQUENCIES: RECENT BROADCASTS</h3>
+          <h3 class="recent-title">Recent posts</h3>
           <div class="cyber-grid">
             {{#foreach recent_posts}}
               {{> "post-card"}}
