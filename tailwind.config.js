@@ -32,8 +32,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        display: ['var(--gh-font-heading)', 'Orbitron', 'system-ui', 'sans-serif'],
-        body: ['var(--gh-font-body)', 'Space Grotesk', 'system-ui', 'sans-serif'],
+        display: ['Orbitron', 'var(--gh-font-heading)', 'system-ui', 'sans-serif'],
+        body: ['Space Grotesk', 'var(--gh-font-body)', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'Courier New', 'monospace'],
       },
       boxShadow: {

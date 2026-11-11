@@ -9,14 +9,36 @@
   {{!-- Cyberpunk Typography --}}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Orbitron:wght@500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   {{!-- Theme CSS --}}
   <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
 
-
   {{!-- Ghost Head --}}
   {{ghost_head}}
+
+  {{!-- Enforce Theme Cyber Typography & Accent --}}
+  <style>
+    :root {
+      --ghost-accent-color: #ffb000 !important;
+      --gh-font-heading: 'Orbitron', system-ui, -apple-system, sans-serif !important;
+      --gh-font-body: 'Space Grotesk', system-ui, -apple-system, sans-serif !important;
+      --font-display: 'Orbitron', system-ui, -apple-system, sans-serif !important;
+      --font-body: 'Space Grotesk', system-ui, -apple-system, sans-serif !important;
+      --font-mono: 'JetBrains Mono', 'Courier New', monospace !important;
+    }
+  </style>
+
+  <script>
+    (function() {
+      // Pre-emptively override Portal script dataset
+      var pScript = document.querySelector('script[data-ghost]');
+      if (pScript) {
+        pScript.dataset.accentColor = '#ffb000';
+        pScript.setAttribute('data-accent-color', '#ffb000');
+      }
+    })();
+  </script>
 </head>
 <body class="{{body_class}}">
   {{!-- Ambient Cyberpunk Visual Layers --}}

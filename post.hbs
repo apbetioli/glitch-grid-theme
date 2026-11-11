@@ -106,13 +106,24 @@
       {{!-- Ghost Native Comments --}}
       {{#if comments}}
         <section class="cyber-comments-section">
-          <div class="comments-header">
-            <h3 class="comments-title">Comments</h3>
-          </div>
           <div class="comments-container">
-            {{comments}}
+            {{comments mode="dark"}}
           </div>
         </section>
+        <script>
+          (function() {
+            function syncCommentsAccent() {
+              var cScript = document.querySelector('script[data-ghost-comments]');
+              if (cScript && cScript.getAttribute('data-accent-color') !== '#ffb000') {
+                cScript.setAttribute('data-accent-color', '#ffb000');
+                if (cScript.dataset) cScript.dataset.accentColor = '#ffb000';
+              }
+              document.documentElement.style.setProperty('--ghost-accent-color', '#ffb000');
+            }
+            syncCommentsAccent();
+            document.addEventListener('DOMContentLoaded', syncCommentsAccent);
+          })();
+        </script>
       {{/if}}
 
     {{else}}
