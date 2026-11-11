@@ -1,0 +1,80 @@
+<header class="cyber-header" id="cyber-header">
+  <div class="cyber-top-ticker">
+    <div class="cyber-container ticker-inner">
+      <div class="ticker-left">
+        <span class="status-pulse-dot" aria-hidden="true"></span>
+        <span class="ticker-label">STATUS:</span>
+        <span class="ticker-val highlight-green">ONLINE // NODE_SECURE</span>
+        <span class="ticker-sep" aria-hidden="true">|</span>
+        <span class="ticker-label hide-mobile">SYS:</span>
+        <span class="ticker-val hide-mobile">GLITCH_GRID v5.0</span>
+      </div>
+      <div class="ticker-right">
+        <button type="button" class="hud-toggle-btn" id="sfx-toggle" aria-label="Toggle UI Audio Feedback" title="Toggle UI Audio Feedback">
+          <span class="hud-toggle-icon">🔊</span>
+          <span class="hud-toggle-text">SFX: <span id="sfx-state">ON</span></span>
+        </button>
+        <span class="ticker-sep" aria-hidden="true">|</span>
+        <button type="button" class="hud-toggle-btn" id="scanline-toggle" aria-label="Toggle CRT Scanlines" title="Toggle Scanlines">
+          <span class="hud-toggle-icon">📺</span>
+          <span class="hud-toggle-text">CRT: <span id="scanline-state">ON</span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cyber-navbar">
+    <div class="cyber-container nav-container">
+      <div class="nav-brand-wrap">
+        {{#if @site.logo}}
+          <a class="cyber-logo" href="{{@site.url}}">
+            <img src="{{@site.logo}}" alt="{{@site.title}}" />
+          </a>
+        {{else}}
+          <a class="cyber-site-title glitch-hover" href="{{@site.url}}" data-text="{{@site.title}}">
+            <span class="cyber-title-prefix">//</span>
+            <span class="cyber-title-text">{{@site.title}}</span>
+          </a>
+        {{/if}}
+      </div>
+
+      <nav class="cyber-menu" id="cyber-menu" aria-label="Main Navigation">
+        {{navigation}}
+      </nav>
+
+      <div class="nav-actions">
+        {{!-- Ghost Native Search button --}}
+        <button class="cyber-icon-btn search-trigger" data-ghost-search aria-label="Search posts">
+          {{> "icons/search"}}
+          <span class="sr-only">Search</span>
+        </button>
+
+        {{!-- Membership / Portal integration --}}
+        {{#if @site.members_enabled}}
+          {{#if @member}}
+            <a class="cyber-btn cyber-btn-ghost" href="#/portal/account" data-portal="account">
+              <span class="btn-chamfer"></span>
+              <span class="btn-text">ACCOUNT</span>
+            </a>
+          {{else}}
+            <a class="cyber-btn cyber-btn-ghost hide-mobile" href="#/portal/signin" data-portal="signin">
+              <span class="btn-chamfer"></span>
+              <span class="btn-text">SIGN IN</span>
+            </a>
+            <a class="cyber-btn cyber-btn-primary" href="#/portal/signup" data-portal="signup">
+              <span class="btn-chamfer"></span>
+              <span class="btn-glow"></span>
+              <span class="btn-text">INITIALIZE</span>
+            </a>
+          {{/if}}
+        {{/if}}
+
+        <button class="cyber-burger" id="burger-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="cyber-menu">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,75 @@
+<footer class="cyber-footer">
+  <div class="cyber-footer-grid-line" aria-hidden="true"></div>
+
+  <div class="cyber-container footer-content">
+    <div class="footer-top">
+      <div class="footer-col brand-col">
+        <a class="footer-logo glitch-hover-sm" href="{{@site.url}}" data-text="{{@site.title}}">
+          &gt; {{@site.title}}
+        </a>
+        {{#if @site.description}}
+          <p class="footer-desc">{{@site.description}}</p>
+        {{/if}}
+        <div class="footer-status-pill">
+          <span class="status-dot"></span>
+          <span class="status-code">NODE: ACTIVE // 256-BIT_ENCRYPTED</span>
+        </div>
+      </div>
+
+      {{#if @site.secondary_navigation}}
+        <div class="footer-col nav-col">
+          <h4 class="footer-heading">// DIRECTORY</h4>
+          {{navigation type="secondary"}}
+        </div>
+      {{/if}}
+
+      {{#if @site.members_enabled}}
+        {{#unless @member}}
+          <div class="footer-col subscribe-col">
+            <h4 class="footer-heading">// NEURAL_DISPATCH</h4>
+            <p class="subscribe-desc">Subscribe to direct feed transmissions. Zero spam, encrypted delivery.</p>
+            <form class="cyber-sub-form" data-members-form="subscribe">
+              <div class="form-input-wrap">
+                <input class="cyber-input" data-members-email type="email" placeholder="agent@net.cyber" required aria-label="Email address" />
+                <button class="cyber-btn cyber-btn-primary form-submit" type="submit">
+                  <span class="btn-text">CONNECT</span>
+                </button>
+              </div>
+              <div class="sub-message-box">
+                <span class="sub-msg-text msg-loading">INITIALIZING PROTOCOL...</span>
+                <span class="sub-msg-text msg-success">TRANSMISSION CONFIRMED. CHECK YOUR INBOX.</span>
+                <span class="sub-msg-text msg-error" data-members-error>HANDSHAKE FAILED. TRY AGAIN.</span>
+              </div>
+            </form>
+          </div>
+        {{/unless}}
+      {{/if}}
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        <span>{{@site.title}} &copy; {{date format="YYYY"}}</span>
+        <span class="footer-sep">/</span>
+        <span>PUBLISHED WITH <a href="https://ghost.org" target="_blank" rel="noopener">GHOST</a></span>
+        <span class="footer-sep">/</span>
+        <span>THEME: <span class="highlight-cyan">GLITCH_GRID</span></span>
+      </div>
+
+      <div class="footer-socials">
+        {{#if @site.twitter}}
+          <a class="social-link" href="{{social_url type="twitter"}}" target="_blank" rel="noopener" aria-label="Twitter">
+            {{> "icons/twitter"}}
+          </a>
+        {{/if}}
+        {{#if @site.facebook}}
+          <a class="social-link" href="{{social_url type="facebook"}}" target="_blank" rel="noopener" aria-label="Facebook">
+            {{> "icons/facebook"}}
+          </a>
+        {{/if}}
+        <a class="social-link" href="{{@site.url}}/rss/" target="_blank" rel="noopener" aria-label="RSS Feed">
+          {{> "icons/rss"}}
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

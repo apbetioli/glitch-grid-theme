@@ -1,0 +1,64 @@
+{
+  "name": "glitch-grid",
+  "description": "A high-octane Cyberpunk dark-mode theme for Ghost CMS featuring HUD accents, neon glows, responsive cyber-grid layouts, and native Ghost 5.x features.",
+  "version": "1.0.0",
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Glitch Grid Team",
+    "email": "support@glitchgrid.cyber"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme",
+    "cyberpunk",
+    "dark-mode",
+    "neon",
+    "sci-fi",
+    "hud",
+    "tech",
+    "blog"
+  ],
+  "scripts": {
+    "dev": "concurrently -n \"CSS,SYNC\" -c \"cyan,magenta\" \"npm run watch:css\" \"npm run watch:bs\"",
+    "watch:css": "tailwindcss -i ./assets/css/src/screen.css -o ./assets/css/screen.css --watch",
+    "watch:bs": "node scripts/livereload.js",
+    "build:css": "tailwindcss -i ./assets/css/src/screen.css -o ./assets/css/screen.css --minify",
+    "build": "npm run build:css && npm run test",
+    "test": "npx gscan .",
+    "test:fatal": "npx gscan --fatal .",
+    "zip": "npm run build && zip -r glitch-grid.zip . -x '*.git*' 'node_modules*' 'glitch-grid.zip' '.DS_Store' 'assets/css/src*' 'scripts*'"
+  },
+  "config": {
+    "posts_per_page": 9,
+    "card_assets": true,
+    "custom": {
+      "cyber_accent_color": {
+        "type": "color",
+        "default": "#00f0ff"
+      },
+      "enable_scanlines": {
+        "type": "boolean",
+        "default": true
+      },
+      "header_style": {
+        "type": "select",
+        "options": [
+          "Glitch Hero",
+          "Minimal"
+        ],
+        "default": "Glitch Hero"
+      }
+    }
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.6.2",
+    "browser-sync": "^3.0.4",
+    "concurrently": "^10.0.7",
+    "postcss": "^8.5.32",
+    "tailwindcss": "^3.4.19"
+  }
+}

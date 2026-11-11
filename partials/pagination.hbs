@@ -1,0 +1,34 @@
+<nav class="cyber-pagination" aria-label="Pagination Navigation">
+  <div class="pagination-inner">
+    {{#if prev}}
+      <a class="pagination-btn pagination-prev" href="{{page_url prev}}">
+        <span class="pagination-icon">{{> "icons/arrow-left"}}</span>
+        <span class="pagination-label">PREV_SECTOR</span>
+      </a>
+    {{else}}
+      <span class="pagination-btn pagination-disabled" aria-disabled="true">
+        <span class="pagination-icon">{{> "icons/arrow-left"}}</span>
+        <span class="pagination-label">PREV_SECTOR</span>
+      </span>
+    {{/if}}
+
+    <div class="pagination-indicator">
+      <span class="indicator-prefix">SECTOR</span>
+      <span class="indicator-cur">{{page}}</span>
+      <span class="indicator-sep">/</span>
+      <span class="indicator-total">{{pages}}</span>
+    </div>
+
+    {{#if next}}
+      <a class="pagination-btn pagination-next" href="{{page_url next}}">
+        <span class="pagination-label">NEXT_SECTOR</span>
+        <span class="pagination-icon">{{> "icons/arrow-right"}}</span>
+      </a>
+    {{else}}
+      <span class="pagination-btn pagination-disabled" aria-disabled="true">
+        <span class="pagination-label">NEXT_SECTOR</span>
+        <span class="pagination-icon">{{> "icons/arrow-right"}}</span>
+      </span>
+    {{/if}}
+  </div>
+</nav>

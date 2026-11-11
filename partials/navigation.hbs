@@ -1,0 +1,24 @@
+{{#if isSecondary}}
+  <ul class="cyber-nav-secondary" role="menu">
+    {{#foreach navigation}}
+      <li class="cyber-nav-item {{slug}}{{#if current}} nav-current{{/if}}" role="menuitem">
+        <a href="{{url absolute="true"}}" class="cyber-nav-link">
+          <span class="cyber-nav-bracket">[</span>
+          <span class="cyber-nav-text">{{label}}</span>
+          <span class="cyber-nav-bracket">]</span>
+        </a>
+      </li>
+    {{/foreach}}
+  </ul>
+{{else}}
+  <ul class="cyber-nav-primary" role="menu">
+    {{#foreach navigation}}
+      <li class="cyber-nav-item {{slug}}{{#if current}} nav-current{{/if}}" role="menuitem">
+        <a href="{{url absolute="true"}}" class="cyber-nav-link">
+          <span class="cyber-nav-prefix">&gt;</span>
+          <span class="cyber-nav-text">{{label}}</span>
+        </a>
+      </li>
+    {{/foreach}}
+  </ul>
+{{/if}}

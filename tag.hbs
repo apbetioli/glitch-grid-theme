@@ -1,0 +1,46 @@
+{{!< default}}
+
+<div class="cyber-archive-page">
+  {{#tag}}
+  <header class="cyber-archive-header">
+    <div class="cyber-container">
+      <div class="archive-hud-frame">
+        <span class="hud-corner top-left" aria-hidden="true"></span>
+        <span class="hud-corner top-right" aria-hidden="true"></span>
+        <span class="hud-corner bottom-left" aria-hidden="true"></span>
+        <span class="hud-corner bottom-right" aria-hidden="true"></span>
+
+        <div class="archive-meta-tag">
+          <span class="archive-dot"></span>
+          <span class="archive-type">FREQUENCY_FILTER // TAG_ARCHIVE</span>
+        </div>
+
+        <h1 class="archive-title glitch-text" data-text="#{{name}}">
+          #{{name}}
+        </h1>
+
+        {{#if description}}
+          <p class="archive-desc">{{description}}</p>
+        {{/if}}
+
+        <div class="archive-count-badge">
+          <span class="count-prefix">ENTRIES:</span>
+          <span class="count-val">{{plural ../pagination.total empty="0 TRANSMISSIONS" singular="1 TRANSMISSION" plural="% TRANSMISSIONS"}}</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  {{/tag}}
+
+  <section class="cyber-feed-section">
+    <div class="cyber-container">
+      <div class="cyber-grid">
+        {{#foreach posts}}
+          {{> "post-card"}}
+        {{/foreach}}
+      </div>
+
+      {{pagination}}
+    </div>
+  </section>
+</div>

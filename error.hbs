@@ -1,0 +1,47 @@
+{{!< default}}
+
+<div class="cyber-error-page">
+  <div class="cyber-container">
+    <div class="error-hud-box">
+      <span class="hud-corner top-left" aria-hidden="true"></span>
+      <span class="hud-corner top-right" aria-hidden="true"></span>
+      <span class="hud-corner bottom-left" aria-hidden="true"></span>
+      <span class="hud-corner bottom-right" aria-hidden="true"></span>
+
+      <div class="error-code-badge">
+        <span class="badge-dot-red"></span>
+        <span>CRITICAL_SYSTEM_FAULT // {{statusCode}}</span>
+      </div>
+
+      <h1 class="error-big-code glitch-text" data-text="{{statusCode}}">{{statusCode}}</h1>
+      <h2 class="error-title">{{message}}</h2>
+
+      <p class="error-desc">
+        A kernel panic occurred in the neural sub-processor. Signal integrity dropped below threshold.
+      </p>
+
+      <div class="error-actions">
+        <a class="cyber-btn cyber-btn-primary" href="{{@site.url}}">
+          <span class="btn-chamfer"></span>
+          <span class="btn-text">REBOOT CONNECTION</span>
+        </a>
+      </div>
+
+      {{#if errorDetails}}
+        <div class="error-stack-box">
+          <h4 class="stack-title">// MEMORY DUMP</h4>
+          <ul class="stack-list">
+            {{#foreach errorDetails}}
+              <li>
+                <span class="stack-rule">{{{rule}}}</span>
+                {{#foreach failures}}
+                  <span class="stack-fail">Ref: {{ref}} - {{message}}</span>
+                {{/foreach}}
+              </li>
+            {{/foreach}}
+          </ul>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</div>
