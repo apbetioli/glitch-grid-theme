@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GLITCH GRID // Brand Identity & Logo Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Orbitron:wght@700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090a10;
+      --surface: #10121d;
+      --card: #141726;
+      --amber: #ffb000;
+      --magenta: #ff0055;
+      --cyan: #00f0ff;
+      --green: #00ff66;
+      --text: #e2e8f0;
+      --muted: #8b9bb4;
+      --border: rgba(255, 176, 0, 0.2);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Space Grotesk', sans-serif;
+      min-height: 100vh;
+      padding: 40px 20px 80px;
+      background-image: 
+        radial-gradient(ellipse at 50% 0%, rgba(255, 176, 0, 0.08) 0%, transparent 60%),
+        linear-gradient(rgba(255, 176, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 176, 0, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 30px 30px, 30px 30px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header.hud-header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 24px;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .title-group h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.2rem;
+      color: #fff;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tag-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      background: rgba(255, 176, 0, 0.15);
+      border: 1px solid var(--amber);
+      color: var(--amber);
+      padding: 4px 10px;
+      border-radius: 2px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin-top: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+    }
+
+    /* Grid of variations */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+      margin-bottom: 48px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--amber);
+      box-shadow: 0 0 20px rgba(255, 176, 0, 0.25);
+    }
+
+    .card-header {
+      padding: 16px 20px;
+      background: rgba(16, 18, 29, 0.7);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-header h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      color: #fff;
+      letter-spacing: 0.05em;
+    }
+
+    .format-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--cyan);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      padding: 2px 6px;
+    }
+
+    .preview-box {
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px;
+      background: #090a10;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .preview-box img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .card-footer {
+      padding: 18px 20px;
+      background: var(--surface);
+      margin-top: auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 8px 14px;
+      background: transparent;
+      border: 1px solid var(--amber);
+      color: var(--amber);
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+      clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+    }
+
+    .btn:hover {
+      background: var(--amber);
+      color: #000;
+      box-shadow: 0 0 12px rgba(255, 176, 0, 0.5);
+    }
+
+    .btn-secondary {
+      border-color: rgba(255, 255, 255, 0.2);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      box-shadow: none;
+    }
+
+    /* Live Ghost Header Simulation */
+    .simulation-section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 28px;
+      margin-top: 40px;
+      clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+    }
+
+    .simulation-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.15rem;
+      color: var(--amber);
+      margin-bottom: 8px;
+    }
+
+    .simulation-desc {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .sim-navbar {
+      height: 64px;
+      background: rgba(9, 10, 16, 0.95);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      position: relative;
+    }
+
+    .sim-navbar::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--amber), var(--magenta), transparent);
+    }
+
+    .sim-logo-link {
+      display: inline-flex;
+      align-items: center;
+      height: 38px;
+    }
+
+    .sim-logo-link img {
+      height: 38px;
+      width: auto;
+    }
+
+    .sim-nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+    }
+
+    .sim-nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .sim-nav-links a.active {
+      color: var(--amber);
+    }
+
+    .sim-cta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      background: var(--amber);
+      color: #000;
+      text-decoration: none;
+      clip-path: polygon(6px 0, 100% 0, 100% calc(100% - 6px), calc(100% - 6px) 100%, 0 100%, 0 6px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hud-header">
+      <div class="title-group">
+        <h1>Glitch Grid <span class="tag-pill">ID // LOGO SUITE</span></h1>
+        <p class="subtitle">// OFFICIAL BRAND ASSETS FOR GHOST CMS THEME</p>
+      </div>
+    </header>
+
+    <div class="logo-grid">
+      <!-- 1. Full Cyberpunk Logo -->
+      <div class="card">
+        <div class="card-header">
+          <h2>01. Full Cyberpunk Lockup</h2>
+          <span class="format-tag">SVG / VECTOR</span>
+        </div>
+        <div class="preview-box">
+          <img src="logo.svg" alt="Glitch Grid Full Logo" style="max-height: 70px;">
+        </div>
+        <div class="card-footer">
+          <p>Primary theme logo with chamfered shield badge, glitch displacement matrix, and cyberpunk neural subtitle.</p>
+          <div class="btn-row">
+            <a href="logo.svg" download class="btn">⬇ Download SVG</a>
+            <a href="logo.svg" target="_blank" class="btn btn-secondary">Open RAW</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Minimalist Streamlined Logo -->
+      <div class="card">
+        <div class="card-header">
+          <h2>02. Minimal Lockup</h2>
+          <span class="format-tag">SVG / VECTOR</span>
+        </div>
+        <div class="preview-box">
+          <img src="logo-minimal.svg" alt="Glitch Grid Minimal Logo" style="max-height: 55px;">
+        </div>
+        <div class="card-footer">
+          <p>Ultra-clean, high-legibility horizontal lockup designed specifically for the sticky Ghost header navigation.</p>
+          <div class="btn-row">
+            <a href="logo-minimal.svg" download class="btn">⬇ Download SVG</a>
+            <a href="logo-minimal.svg" target="_blank" class="btn btn-secondary">Open RAW</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Icon / Emblem / Favicon -->
+      <div class="card">
+        <div class="card-header">
+          <h2>03. Cyber Emblem & Icon</h2>
+          <span class="format-tag">SVG / FAVICON</span>
+        </div>
+        <div class="preview-box">
+          <img src="logo-icon.svg" alt="Glitch Grid Emblem" style="max-height: 110px;">
+        </div>
+        <div class="card-footer">
+          <p>1:1 Square chamfered octagonal mark. Perfect for Ghost publication icon, favicon, social avatars, and app icons.</p>
+          <div class="btn-row">
+            <a href="logo-icon.svg" download class="btn">⬇ Download SVG</a>
+            <a href="logo-icon.svg" target="_blank" class="btn btn-secondary">Open RAW</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. 3D Rendered Key Artwork -->
+      <div class="card">
+        <div class="card-header">
+          <h2>04. Rendered Cyber Edition</h2>
+          <span class="format-tag">HD RASTER / JPG</span>
+        </div>
+        <div class="preview-box">
+          <img src="logo-render.jpg" alt="Glitch Grid 3D Render" style="max-height: 140px; border-radius: 4px;">
+        </div>
+        <div class="card-footer">
+          <p>Rich 3D rendered key art with volumetric neon wireframe grid, chromatic aberration, and HUD telemetry.</p>
+          <div class="btn-row">
+            <a href="logo-render.jpg" download class="btn">⬇ Download JPG</a>
+            <a href="logo-render.jpg" target="_blank" class="btn btn-secondary">View Full</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Navbar Simulation -->
+    <div class="simulation-section">
+      <h3 class="simulation-title">GHOST NAVBAR SIMULATION (38px HEIGHT)</h3>
+      <p class="simulation-desc">// How the logo integrates inside Ghost CMS's .cyber-header</p>
+      
+      <div class="sim-navbar">
+        <a href="#" class="sim-logo-link">
+          <img src="logo.svg" alt="Glitch Grid">
+        </a>
+        <ul class="sim-nav-links">
+          <li><a href="#" class="active">// SECTOR.01</a></li>
+          <li><a href="#">DISPATCHES</a></li>
+          <li><a href="#">OPERATIVES</a></li>
+        </ul>
+        <a href="#" class="sim-cta">SUBSCRIBE</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

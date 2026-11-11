@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" width="100%" height="100%" fill="none">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap');
+      
+      .brand-title {
+        font-family: 'Orbitron', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, sans-serif;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+      .brand-sub {
+        font-family: 'JetBrains Mono', 'Courier New', monospace;
+        font-weight: 700;
+        font-size: 11px;
+        letter-spacing: 0.28em;
+      }
+      .glow-amber {
+        filter: drop-shadow(0 0 6px rgba(255, 176, 0, 0.6)) drop-shadow(0 0 16px rgba(255, 176, 0, 0.3));
+      }
+      .glow-magenta {
+        filter: drop-shadow(0 0 6px rgba(255, 0, 85, 0.7)) drop-shadow(0 0 14px rgba(255, 0, 85, 0.3));
+      }
+      .glow-cyan {
+        filter: drop-shadow(0 0 5px rgba(0, 240, 255, 0.8));
+      }
+    </style>
+
+    <!-- Linear Gradients -->
+    <linearGradient id="cyberAmber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE066" />
+      <stop offset="60%" stop-color="#FFB000" />
+      <stop offset="100%" stop-color="#FF7700" />
+    </linearGradient>
+
+    <linearGradient id="cyberMagenta" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF2A85" />
+      <stop offset="100%" stop-color="#FF0055" />
+    </linearGradient>
+
+    <linearGradient id="cyberCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="100%" stop-color="#00FFAA" />
+    </linearGradient>
+
+    <linearGradient id="darkPlate" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141726" />
+      <stop offset="100%" stop-color="#090A10" />
+    </linearGradient>
+
+    <pattern id="gridPattern" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="rgba(255, 176, 0, 0.15)" stroke-width="0.8" />
+    </pattern>
+
+    <!-- Glitch Displacement Clip -->
+    <clipPath id="glitchSliceTop">
+      <rect x="0" y="0" width="80" height="38" />
+    </clipPath>
+    <clipPath id="glitchSliceMid">
+      <rect x="0" y="38" width="80" height="9" />
+    </clipPath>
+    <clipPath id="glitchSliceBtm">
+      <rect x="0" y="47" width="80" height="33" />
+    </clipPath>
+  </defs>
+
+  <!-- ==================== ICON BADGE (LEFT) ==================== -->
+  <g transform="translate(10, 6)">
+    <!-- Background Chamfered Hex Plate -->
+    <polygon points="20,2 62,2 78,18 78,50 62,66 20,66 4,50 4,18" 
+             fill="url(#darkPlate)" 
+             stroke="rgba(255, 176, 0, 0.35)" 
+             stroke-width="1.5" />
+
+    <!-- Grid Texture in Badge -->
+    <polygon points="20,2 62,2 78,18 78,50 62,66 20,66 4,50 4,18" 
+             fill="url(#gridPattern)" />
+
+    <!-- Outer Chamfer Neon Accent Brackets -->
+    <path d="M 14,4 L 4,14 L 4,26" fill="none" stroke="#FFB000" stroke-width="2" stroke-linecap="round" class="glow-amber" />
+    <path d="M 68,64 L 78,54 L 78,42" fill="none" stroke="#FF0055" stroke-width="2" stroke-linecap="round" class="glow-magenta" />
+
+    <!-- Top & Mid Sub-slices to create the Glitch Matrix G -->
+    <!-- Layer 1: Glitch G - Main Amber Body (Top) -->
+    <g clip-path="url(#glitchSliceTop)">
+      <path d="M 58,20 L 30,20 C 23,20 18,25 18,32 L 18,44" 
+            fill="none" 
+            stroke="url(#cyberAmber)" 
+            stroke-width="5" 
+            stroke-linecap="square"
+            class="glow-amber" />
+      <polygon points="28,26 52,26 52,31 33,31" fill="#FFB000" opacity="0.4" />
+    </g>
+
+    <!-- Layer 2: Glitch Slice Offset (Shifted -4px left with Cyan aberration) -->
+    <g clip-path="url(#glitchSliceMid)" transform="translate(-4, 0)">
+      <path d="M 18,32 L 18,48 L 56,48 L 56,36 L 40,36" 
+            fill="none" 
+            stroke="#00F0FF" 
+            stroke-width="5" 
+            stroke-linecap="square"
+            class="glow-cyan" />
+      <!-- Horizontal glitch beam line -->
+      <line x1="2" y1="42" x2="80" y2="42" stroke="#00F0FF" stroke-width="1.2" opacity="0.8" />
+    </g>
+
+    <!-- Layer 3: Glitch G - Magenta Core (Bottom, Shifted +2px right) -->
+    <g clip-path="url(#glitchSliceBtm)" transform="translate(2, 0)">
+      <path d="M 18,44 C 18,51 23,56 30,56 L 52,56 C 58,56 62,52 62,46 L 62,38 L 40,38" 
+            fill="none" 
+            stroke="url(#cyberMagenta)" 
+            stroke-width="5" 
+            stroke-linecap="square"
+            class="glow-magenta" />
+      <rect x="42" y="44" width="10" height="3" fill="#FF0055" class="glow-magenta" />
+    </g>
+
+    <!-- Central Data Core / HUD Reticle -->
+    <circle cx="41" cy="34" r="2.5" fill="#FFFFFF" class="glow-cyan" />
+    <circle cx="41" cy="34" r="5.5" fill="none" stroke="#00F0FF" stroke-width="0.8" stroke-dasharray="2 2" />
+
+    <!-- Corner HUD Corner Ticks -->
+    <line x1="24" y1="8" x2="32" y2="8" stroke="#FFB000" stroke-width="1" opacity="0.6" />
+    <line x1="50" y1="60" x2="58" y2="60" stroke="#FF0055" stroke-width="1" opacity="0.6" />
+  </g>
+
+  <!-- ==================== TYPOGRAPHY (RIGHT) ==================== -->
+  <g transform="translate(106, 0)">
+    <!-- Chromatic Aberration Shadow for GLITCH (Magenta Shift) -->
+    <text x="2" y="47" class="brand-title" font-size="34" fill="#FF0055" opacity="0.75" transform="translate(1.5, 0.5)">GLITCH</text>
+    
+    <!-- Chromatic Aberration Shadow for GLITCH (Cyan Shift) -->
+    <text x="-1.5" y="46" class="brand-title" font-size="34" fill="#00F0FF" opacity="0.7" transform="translate(-1.5, -0.5)">GLITCH</text>
+
+    <!-- Main Text: GLITCH -->
+    <text x="0" y="46.5" class="brand-title glow-amber" font-size="34" fill="url(#cyberAmber)">GLITCH</text>
+
+    <!-- Grid Divider Slash // -->
+    <g transform="translate(182, 22)">
+      <line x1="0" y1="24" x2="10" y2="0" stroke="#FF0055" stroke-width="3" stroke-linecap="round" class="glow-magenta" />
+      <line x1="8" y1="24" x2="18" y2="0" stroke="#FFB000" stroke-width="3" stroke-linecap="round" class="glow-amber" />
+    </g>
+
+    <!-- Text: GRID -->
+    <!-- Magenta Aberration Shadow for GRID -->
+    <text x="210" y="47" class="brand-title" font-size="34" fill="#FF0055" opacity="0.6" transform="translate(1.5, 0.5)">GRID</text>
+    <!-- Cyan Aberration Shadow for GRID -->
+    <text x="207" y="46" class="brand-title" font-size="34" fill="#00F0FF" opacity="0.6" transform="translate(-1.5, -0.5)">GRID</text>
+    <!-- Main Text: GRID (Crisp White with Cyan border tint) -->
+    <text x="208.5" y="46.5" class="brand-title" font-size="34" fill="#FFFFFF">GRID</text>
+
+    <!-- Glitch Slice horizontal tick across typography -->
+    <line x1="-5" y1="36" x2="120" y2="36" stroke="#00F0FF" stroke-width="0.8" opacity="0.4" />
+    <rect x="75" y="35" width="14" height="2" fill="#00F0FF" opacity="0.9" class="glow-cyan" />
+    
+    <!-- Subtitle / Meta Tagline -->
+    <g transform="translate(2, 64)">
+      <!-- Terminal bracket -->
+      <text x="0" y="0" class="brand-sub" fill="#FF0055">&lt;</text>
+      <text x="14" y="0" class="brand-sub" fill="#8B9BB4">CYBERPUNK NEURAL FEED</text>
+      <text x="226" y="0" class="brand-sub" fill="#FFB000">//</text>
+      <text x="246" y="0" class="brand-sub" fill="#00FF66">SYS.OK</text>
+      <text x="296" y="0" class="brand-sub" fill="#FF0055">&gt;</text>
+    </g>
+  </g>
+</svg>

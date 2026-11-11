@@ -38,6 +38,12 @@ glitch-grid-theme/
 ├── assets/
 │   ├── css/
 │   │   └── screen.css          # Cyberpunk design system & tokens
+│   ├── images/
+│   │   ├── logo.svg            # Full Cyberpunk HUD logo with typography
+│   │   ├── logo-minimal.svg    # Minimal horizontal header lockup
+│   │   ├── logo-icon.svg       # Square cyber emblem / favicon
+│   │   ├── logo-render.jpg     # 3D key visual art render
+│   │   └── logo-preview.html   # Interactive brand showcase & preview
 │   └── js/
 │       └── main.js             # HUD interactions, Web Audio SFX, progress bar
 ├── partials/
